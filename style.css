@@ -326,7 +326,7 @@ section h2 {
   position: fixed;
   inset: 0;
   background: url("images/menu-bg.jpg") center / cover no-repeat;
-  opacity: 0.18;
+  opacity: 0.32;
   z-index: -1;
   pointer-events: none;
 }
@@ -413,7 +413,6 @@ section h2 {
   .nav nav a { font-size: 0.9rem; }
   .brand-name { font-size: 1.2rem; }
   .brand-sub { display: none; }
-  .hero { height: 75vh; min-height: 420px; }
   section { padding: 3rem 0; }
   .card { padding: 1.4rem; }
   .menu-category { padding: 1.5rem; margin: 1.75rem 0; }
