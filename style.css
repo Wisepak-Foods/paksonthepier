@@ -321,6 +321,15 @@ section h2 {
 }
 
 /* Menu page */
+.menu-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("images/menu-bg.jpg") center / cover no-repeat;
+  opacity: 0.18;
+  z-index: -1;
+  pointer-events: none;
+}
 .menu-hero {
   padding: 3rem 0 0.5rem;
   text-align: center;
