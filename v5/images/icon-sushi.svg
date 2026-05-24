@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
+  <!-- Left sushi piece -->
+  <g transform="translate(22 58)">
+    <circle r="17" fill="#1f4032"/>
+    <circle r="14" fill="#fafaf0"/>
+    <circle r="7" fill="#F47B20"/>
+    <circle cx="-2" cy="-2" r="2" fill="#ffa55e" opacity="0.65"/>
+  </g>
+  <!-- Center sushi piece (largest, hero) -->
+  <g transform="translate(52 48)">
+    <circle r="21" fill="#1f4032"/>
+    <circle r="17" fill="#fafaf0"/>
+    <circle r="9" fill="#E63946"/>
+    <circle cx="-3" cy="-2" r="2.5" fill="#ff8a6a" opacity="0.6"/>
+    <!-- Sesame on rice -->
+    <circle cx="-12" cy="-8" r="1" fill="#777"/>
+    <circle cx="12" cy="-9" r="1" fill="#777"/>
+    <circle cx="10" cy="11" r="1" fill="#777"/>
+    <circle cx="-11" cy="9" r="1" fill="#777"/>
+  </g>
+  <!-- Right sushi piece -->
+  <g transform="translate(80 60)">
+    <circle r="15" fill="#1f4032"/>
+    <circle r="12" fill="#fafaf0"/>
+    <circle r="5.5" fill="#6FBE44"/>
+  </g>
+  <!-- Wasabi blob -->
+  <g transform="translate(15 88)">
+    <ellipse rx="6" ry="4" fill="#6FBE44"/>
+    <ellipse cx="-1.5" cy="-1.5" rx="2" ry="1.2" fill="#8dd25c" opacity="0.7"/>
+  </g>
+</svg>
