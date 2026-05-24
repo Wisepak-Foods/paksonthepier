@@ -335,9 +335,22 @@ section h2 {
   text-align: center;
 }
 .menu-hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-family: 'Pacifico', 'Brush Script MT', cursive;
+  font-weight: normal;
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  line-height: 1.15;
   margin: 0 0 0.5rem;
+  color: var(--color-fg);
+}
+.menu-page .menu-category h2 {
+  font-family: 'Pacifico', 'Brush Script MT', cursive;
+  font-weight: normal;
+  font-size: clamp(2rem, 4.5vw, 2.85rem);
+  line-height: 1.2;
+}
+.menu-page .menu-category h2 .card-price {
+  font-family: var(--font-body);
+  font-size: 1.4rem;
 }
 .menu-category {
   margin: 2.5rem 0;
