@@ -99,6 +99,55 @@ a:hover { color: var(--color-orange); }
   color: var(--color-muted);
 }
 
+/* Navy Pier intro — sits above the storefront sign hero.
+   Placeholder background = deep blue gradient. When you add the Navy Pier
+   sign photo to images/, swap to the rule shown in the comment below. */
+.hero-intro {
+  width: 100%;
+  padding: clamp(2.5rem, 7vw, 5.5rem) 1.25rem;
+  background:
+    radial-gradient(ellipse at center, #1a3a6e 0%, #0a1e3f 70%, #050d1f 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+/* Once you drop a photo at images/navy-pier.jpg, replace .hero-intro above with:
+.hero-intro {
+  width: 100%;
+  padding: clamp(2.5rem, 7vw, 5.5rem) 1.25rem;
+  background:
+    linear-gradient(rgba(5, 12, 30, 0.55), rgba(5, 12, 30, 0.55)),
+    url("images/navy-pier.jpg") center / cover no-repeat;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+*/
+.intro-tag {
+  font-family: Georgia, 'Cambria', serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  margin: 0 0 0.5rem;
+  text-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.6),
+    0 0 24px rgba(255, 220, 150, 0.15);
+  text-transform: uppercase;
+  line-height: 1;
+}
+.intro-headline {
+  font-family: 'Pacifico', 'Brush Script MT', cursive;
+  font-weight: 400;
+  font-size: clamp(1.75rem, 5.5vw, 3.25rem);
+  color: #ffd680;
+  margin: 0;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  line-height: 1.1;
+}
+
 /* Hero — actual sign photo, scaled to CSS-banner letter size + sheen overlay */
 .hero {
   width: 100%;
