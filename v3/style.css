@@ -105,8 +105,11 @@ a:hover { color: var(--color-orange); }
 .hero-intro {
   width: 100%;
   padding: clamp(2.5rem, 7vw, 5.5rem) 1.25rem;
+  /* Navy at top, fades into the sign section's warm-dark at the bottom
+     for a seamless transition into the hero below. */
   background:
-    radial-gradient(ellipse at center, #1a3a6e 0%, #0a1e3f 70%, #050d1f 100%);
+    radial-gradient(ellipse at center top, rgba(40, 75, 135, 0.45) 0%, transparent 65%),
+    linear-gradient(180deg, #14264a 0%, #0d1a32 35%, #0a1018 65%, #0a0807 100%);
   text-align: center;
   position: relative;
   overflow: hidden;
