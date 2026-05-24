@@ -119,19 +119,13 @@ a:hover { color: var(--color-orange); }
   width: 100%;
   height: auto;
 }
-/* Strong fade-to-dark covering the lower half so BEER GARDEN and the
-   RYTHM sign disappear into shadow, while the NAVY PIER arch above
-   stays bright. Also blends seamlessly into the sign hero below. */
+/* Light bottom fade so the banner blends into the sign hero below */
 .hero-intro::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom,
-    transparent 0%,
-    transparent 45%,
-    rgba(10, 8, 7, 0.55) 58%,
-    rgba(10, 8, 7, 0.92) 72%,
-    rgba(10, 8, 7, 1) 88%);
+  left: 0; right: 0; bottom: 0;
+  height: 25%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(10, 8, 7, 1) 100%);
   pointer-events: none;
   z-index: 1;
 }
