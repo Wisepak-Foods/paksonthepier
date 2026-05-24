@@ -103,17 +103,29 @@ a:hover { color: var(--color-orange); }
    Placeholder background = deep blue gradient. When you add the Navy Pier
    sign photo to images/, swap to the rule shown in the comment below. */
 .hero-intro {
+  display: block;
   width: 100%;
   padding: clamp(2.5rem, 7vw, 5.5rem) 1.25rem;
-  /* Navy at top, fades into the sign section's warm-dark at the bottom
-     for a seamless transition into the hero below. */
+  /* Navy Pier promo photo as backdrop. Bottom fades to the warm-dark
+     of the sign section for a seamless transition. The two gradients
+     also darken the image so the white/gold text reads clearly. */
   background:
-    radial-gradient(ellipse at center top, rgba(40, 75, 135, 0.45) 0%, transparent 65%),
-    linear-gradient(180deg, #14264a 0%, #0d1a32 35%, #0a1018 65%, #0a0807 100%);
+    linear-gradient(180deg, rgba(10, 16, 32, 0.35) 0%, rgba(10, 8, 7, 1) 100%),
+    url("images/navy-pier.jpg") center / cover no-repeat;
+  background-color: #0a0807;
   text-align: center;
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+.hero-intro:hover,
+.hero-intro:focus-visible {
+  filter: brightness(1.08);
+  outline: none;
 }
 /* Once you drop a photo at images/navy-pier.jpg, replace .hero-intro above with:
 .hero-intro {
