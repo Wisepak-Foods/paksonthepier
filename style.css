@@ -126,16 +126,6 @@ a:hover { color: var(--color-orange); }
     saturate(1.15)
     drop-shadow(0 0 30px rgba(255, 200, 100, 0.22));
 }
-/* On tablet+ scale the image up to match the CSS-banner letter size.
-   Object-fit cover lets us bump display height beyond natural ratio
-   without distorting; only trims a few pixels of dark margin top/bottom. */
-@media (min-width: 768px) {
-  .hero img {
-    height: clamp(140px, 8.5vw, 175px);
-    object-fit: cover;
-    object-position: center;
-  }
-}
 /* Animated diagonal sheen sweep across the sign */
 .hero::before {
   content: "";
