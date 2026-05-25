@@ -1,9 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
-  <!-- Steam wisps -->
-  <g stroke="#9aa" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.55">
-    <path d="M 36 24 C 31 16 44 12 39 3"/>
-    <path d="M 50 22 C 45 14 58 10 53 1"/>
-    <path d="M 64 24 C 59 16 72 12 67 3"/>
+  <style>
+    .wisp {
+      animation: steam-rise 3.5s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+    }
+    .wisp-2 { animation-delay: 1.15s; }
+    .wisp-3 { animation-delay: 2.30s; }
+    @keyframes steam-rise {
+      0%, 100% { opacity: 0.55; transform: translateY(0); }
+      50%      { opacity: 0.18; transform: translateY(-3px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .wisp { animation: none; opacity: 0.55; }
+    }
+  </style>
+  <!-- Steam wisps (animated) -->
+  <g stroke="#9aa" stroke-width="2" fill="none" stroke-linecap="round">
+    <path class="wisp wisp-1" d="M 36 24 C 31 16 44 12 39 3"/>
+    <path class="wisp wisp-2" d="M 50 22 C 45 14 58 10 53 1"/>
+    <path class="wisp wisp-3" d="M 64 24 C 59 16 72 12 67 3"/>
   </g>
   <!-- Rice mound -->
   <path d="M 22 52 Q 22 31 50 31 Q 78 31 78 52 Z" fill="#fafaf0"/>
