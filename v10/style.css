@@ -792,7 +792,8 @@ section h2 {
    Pier" widget, Navy Pier links section, corner ferris wheel.
    =========================================================== */
 
-.sign-banner-bokeh {
+.sign-banner-bokeh,
+.sign-banner-video {
   position: relative;
   background:
     radial-gradient(ellipse at 50% 30%, #1d1410 0%, #0a0807 70%),
@@ -800,12 +801,35 @@ section h2 {
   overflow: hidden;
   isolation: isolate;
 }
-.sign-banner-bokeh .sign-banner-frame { position: relative; z-index: 2; }
-.sign-banner-bokeh .sign-banner-frame img {
+.sign-banner-bokeh .sign-banner-frame,
+.sign-banner-video .sign-banner-frame { position: relative; z-index: 2; }
+.sign-banner-bokeh .sign-banner-frame img,
+.sign-banner-video .sign-banner-frame img {
   filter:
     drop-shadow(0 3px 6px rgba(0, 0, 0, 0.55))
     drop-shadow(0 12px 22px rgba(0, 0, 0, 0.45))
     drop-shadow(0 24px 38px rgba(0, 0, 0, 0.30));
+}
+
+.sign-banner-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.85;
+  filter: saturate(1.1) brightness(0.95);
+  pointer-events: none;
+}
+.sign-banner-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 50%, transparent 0%, rgba(0,0,0,0.35) 80%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .bokeh-field {
