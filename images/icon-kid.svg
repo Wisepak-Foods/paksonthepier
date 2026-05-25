@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
+  <style>
+    .blink {
+      animation: blink 5s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+    .bob {
+      animation: bob 4s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+    }
+    @keyframes blink {
+      0%, 92%, 100% { transform: scaleY(1); }
+      95%, 97%      { transform: scaleY(0.1); }
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-2px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .blink, .bob { animation: none; }
+    }
+  </style>
+  <g class="bob">
+    <!-- Chef hat puffs -->
+    <ellipse cx="32" cy="22" rx="11" ry="10" fill="#fafaf0"/>
+    <ellipse cx="50" cy="14" rx="14" ry="12" fill="#fafaf0"/>
+    <ellipse cx="68" cy="22" rx="11" ry="10" fill="#fafaf0"/>
+    <!-- Hat band -->
+    <rect x="26" y="30" width="48" height="8" rx="1" fill="#F47B20"/>
+    <!-- Brand-dot speckles on the band -->
+    <circle cx="36" cy="34" r="1.6" fill="#E63946"/>
+    <circle cx="50" cy="34" r="1.6" fill="#6FBE44"/>
+    <circle cx="64" cy="34" r="1.6" fill="#fafaf0"/>
+    <!-- Face -->
+    <circle cx="50" cy="60" r="22" fill="#f4c89a"/>
+    <!-- Hair fringe peeking under the hat -->
+    <path d="M 30 41 Q 38 37 46 41 Q 52 38 58 41 Q 65 37 70 41 L 70 45 Q 50 41 30 45 Z" fill="#3a2418"/>
+    <!-- Cheeks -->
+    <ellipse cx="34" cy="65" rx="4.5" ry="3.5" fill="#ff8a6a" opacity="0.55"/>
+    <ellipse cx="66" cy="65" rx="4.5" ry="3.5" fill="#ff8a6a" opacity="0.55"/>
+    <!-- Closed-curve happy eyes (blink) -->
+    <path class="blink" d="M 37 55 Q 41 51 45 55" stroke="#1a1410" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <path class="blink" d="M 55 55 Q 59 51 63 55" stroke="#1a1410" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <!-- Big smile -->
+    <path d="M 41 67 Q 50 75 59 67" stroke="#1a1410" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Tiny bowl below, peeking up -->
+  <ellipse cx="50" cy="88" rx="18" ry="2.8" fill="#3a2418"/>
+  <path d="M 33 88 Q 33 98 50 99 Q 67 98 67 88 Z" fill="#5a3621"/>
+  <!-- Rice mound -->
+  <path d="M 35 87 Q 35 81 50 81 Q 65 81 65 87 Z" fill="#fafaf0"/>
+  <!-- Tiny food bits on the rice -->
+  <circle cx="43" cy="85" r="1.6" fill="#6FBE44"/>
+  <circle cx="50" cy="84" r="1.6" fill="#F47B20"/>
+  <circle cx="57" cy="85" r="1.6" fill="#E63946"/>
+</svg>
