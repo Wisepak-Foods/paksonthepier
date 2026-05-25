@@ -77,6 +77,13 @@
 
   function attach(canvas) {
     const ctx = canvas.getContext('2d');
+    const slow = canvas.hasAttribute('data-slow');
+    // Slow mode: ~4-8s between launches, single firework at a time,
+    // fewer particles per burst — feels ambient, not busy.
+    const launchMin = slow ? 240 : 30;
+    const launchSpread = slow ? 240 : 40;
+    const burstMin = slow ? 18 : 28;
+    const burstSpread = slow ? 14 : 18;
     let fireworks = [];
     let particles = [];
     let dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -104,14 +111,14 @@
 
       if (--launchTimer <= 0) {
         fireworks.push(new Firework(w, h));
-        launchTimer = 30 + (Math.random() * 40) | 0;
+        launchTimer = launchMin + (Math.random() * launchSpread) | 0;
       }
 
       for (const fw of fireworks) {
         fw.step();
         fw.draw(ctx);
         if (fw.done) {
-          const n = 28 + (Math.random() * 18) | 0;
+          const n = burstMin + (Math.random() * burstSpread) | 0;
           for (let i = 0; i < n; i++) particles.push(new Particle(fw.x, fw.y, fw.color));
         }
       }

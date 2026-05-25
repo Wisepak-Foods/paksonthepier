@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2026-05-25-29-v10">
+<link rel="stylesheet" href="style.css?v=2026-05-25-30-v10">
 
 <script type="application/ld+json">
 {
@@ -130,14 +130,8 @@
 
 <main>
 
-<section class="sign-banner sign-banner-video" aria-label="Paks on the Pier">
+<section class="sign-banner" aria-label="Paks on the Pier">
   <h1 class="sr-only">Paks on the Pier — Asian Bowls, Poké, and Sushi at Navy Pier, Chicago</h1>
-
-  <!-- Option 3 preview behind the hero: the real MP4 loop slot, with
-       the reference bokeh photo standing in as the poster image. In
-       production this becomes a <video> tag. -->
-  <img src="images/bokeh-fireworks.png" alt="" class="sign-banner-bg" aria-hidden="true">
-
   <div class="sign-banner-frame">
     <img src="images/sign-banner-animated.webp" alt="Paks on the Pier brushed-metal sign" width="1124" height="475" fetchpriority="high">
   </div>
@@ -238,6 +232,7 @@
 <!-- "Tonight at the Pier" widget. Demo content is hard-coded; production
      would pull from Navy Pier's event feed and refresh nightly. -->
 <section class="tonight" id="tonight">
+  <canvas class="tonight-fx" data-fireworks data-slow aria-hidden="true"></canvas>
   <div class="container">
     <div class="tonight-card">
       <div class="tonight-header">
@@ -438,6 +433,6 @@
   <p class="container fineprint">&copy; 2026 Paks on the Pier. All rights reserved.</p>
 </footer>
 
-<script src="fireworks.js?v=2026-05-25-29-v10" defer></script>
+<script src="fireworks.js?v=2026-05-25-30-v10" defer></script>
 </body>
 </html>
