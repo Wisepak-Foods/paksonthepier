@@ -78,12 +78,12 @@
   function attach(canvas) {
     const ctx = canvas.getContext('2d');
     const slow = canvas.hasAttribute('data-slow');
-    // Slow mode: ~4-8s between launches, single firework at a time,
-    // fewer particles per burst — feels ambient, not busy.
-    const launchMin = slow ? 240 : 30;
-    const launchSpread = slow ? 240 : 40;
-    const burstMin = slow ? 18 : 28;
-    const burstSpread = slow ? 14 : 18;
+    // "Slow" is now just slightly mellower than demo speed so the
+    // ambient layer behind Tonight reads as active without being hectic.
+    const launchMin = slow ? 60 : 30;
+    const launchSpread = slow ? 80 : 40;
+    const burstMin = slow ? 24 : 28;
+    const burstSpread = slow ? 16 : 18;
     let fireworks = [];
     let particles = [];
     let dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -103,11 +103,13 @@
       const w = canvas.width / dpr;
       const h = canvas.height / dpr;
 
-      // Fade rather than clear, for soft trails.
+      // Erase faster than before so trails don't hang around as a
+      // bright haze (previous 'lighter' blend + slow fade was the cause
+      // of the visual artifact near explosions).
       ctx.globalCompositeOperation = 'destination-out';
-      ctx.fillStyle = 'rgba(0,0,0,0.18)';
+      ctx.fillStyle = 'rgba(0,0,0,0.28)';
       ctx.fillRect(0, 0, w, h);
-      ctx.globalCompositeOperation = 'lighter';
+      ctx.globalCompositeOperation = 'source-over';
 
       if (--launchTimer <= 0) {
         fireworks.push(new Firework(w, h));
@@ -127,7 +129,6 @@
       for (const p of particles) { p.step(); p.draw(ctx); }
       particles = particles.filter(p => !p.dead);
 
-      ctx.globalCompositeOperation = 'source-over';
       requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
