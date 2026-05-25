@@ -21,6 +21,9 @@
       this.color = COLORS[(Math.random() * COLORS.length) | 0];
       this.trail = [];
       this.done = false;
+      // 0 = low burst (~0.55h up), 1 = high burst (~0.85h up). Drives
+      // particle count, spread, and lifetime so high shots feel bigger.
+      this.power = 1 - this.targetY / h;
     }
     step() {
       this.trail.push({ x: this.x, y: this.y });
@@ -46,16 +49,17 @@
   }
 
   class Particle {
-    constructor(x, y, color) {
+    constructor(x, y, color, power) {
       const angle = Math.random() * Math.PI * 2;
-      const speed = 0.6 + Math.random() * 2.4;
+      // High shots spread wider and live longer.
+      const speedScale = 0.8 + power * 0.9;
+      const lifeScale = 0.85 + power * 0.9;
+      const speed = (0.6 + Math.random() * 2.4) * speedScale;
       this.x = x; this.y = y;
       this.vx = Math.cos(angle) * speed;
       this.vy = Math.sin(angle) * speed;
       this.color = color;
-      // Life is scaled up so slow-motion particles stay visible long
-      // enough to see; otherwise they'd fade before traveling much.
-      this.life = ((60 + Math.random() * 30) / BURST_TIME) | 0;
+      this.life = (((60 + Math.random() * 30) * lifeScale) / BURST_TIME) | 0;
       this.age = 0;
       this.size = 1.2 + Math.random() * 1.6;
     }
@@ -125,8 +129,11 @@
         fw.step();
         fw.draw(ctx);
         if (fw.done) {
-          const n = burstMin + (Math.random() * burstSpread) | 0;
-          for (let i = 0; i < n; i++) particles.push(new Particle(fw.x, fw.y, fw.color));
+          // Scale particle count by power too: a high shot gets ~70%
+          // more particles than a low one.
+          const base = burstMin + (Math.random() * burstSpread) | 0;
+          const n = (base * (1 + fw.power * 0.7)) | 0;
+          for (let i = 0; i < n; i++) particles.push(new Particle(fw.x, fw.y, fw.color, fw.power));
         }
       }
       fireworks = fireworks.filter(f => !f.done);
