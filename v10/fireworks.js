@@ -8,6 +8,9 @@
   const COLORS = ['#ffd680','#ff8a5a','#ff5577','#ffb347','#fff2cc','#ff9966','#ff6b9d','#ffe9a8'];
   const GRAVITY = 0.04;
   const DRAG = 0.985;
+  // Slow-motion factor for the explosion only — rocket rise (Firework
+  // class) is unchanged. 0.4 = ~40% of full speed.
+  const BURST_TIME = 0.4;
 
   class Firework {
     constructor(w, h) {
@@ -50,14 +53,16 @@
       this.vx = Math.cos(angle) * speed;
       this.vy = Math.sin(angle) * speed;
       this.color = color;
-      this.life = 60 + (Math.random() * 30) | 0;
+      // Life is scaled up so slow-motion particles stay visible long
+      // enough to see; otherwise they'd fade before traveling much.
+      this.life = ((60 + Math.random() * 30) / BURST_TIME) | 0;
       this.age = 0;
       this.size = 1.2 + Math.random() * 1.6;
     }
     step() {
-      this.x += this.vx;
-      this.y += this.vy;
-      this.vy += GRAVITY;
+      this.x += this.vx * BURST_TIME;
+      this.y += this.vy * BURST_TIME;
+      this.vy += GRAVITY * BURST_TIME;
       this.vx *= DRAG;
       this.vy *= DRAG;
       this.age++;
