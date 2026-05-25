@@ -75,19 +75,32 @@ a:hover { color: var(--color-orange); }
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
   gap: 3px;
-  /* Counter-clockwise tilt matches the plaque dot cluster, where
-     red sits slightly below orange and green is bottom-left. */
+  /* Counter-clockwise tilt matches the plaque dot cluster. */
   transform: rotate(-10deg);
 }
 .brand-dots i {
-  width: 9px;
-  height: 9px;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   display: block;
+  /* Subtle bottom-right drop shadow to match the spherical plaque dots. */
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
 }
-.brand-dots i:nth-child(1) { background: var(--color-orange); grid-column: 1; grid-row: 1; }
-.brand-dots i:nth-child(2) { background: var(--color-red);    grid-column: 2; grid-row: 1; }
-.brand-dots i:nth-child(3) { background: var(--color-green);  grid-column: 1; grid-row: 2; }
+/* Radial gradient = highlight upper-left, body color middle, darker rim
+   lower-right.  Makes each tiny dot read as a sphere instead of a flat
+   circle, mirroring the 3D plaque dots. */
+.brand-dots i:nth-child(1) {
+  background: radial-gradient(circle at 30% 28%, #ffc78a 0%, #f88a35 38%, var(--color-orange) 70%, #a8520f 100%);
+  grid-column: 1; grid-row: 1;
+}
+.brand-dots i:nth-child(2) {
+  background: radial-gradient(circle at 30% 28%, #ffaab1 0%, #ef5564 38%, var(--color-red) 70%, #8b1f2b 100%);
+  grid-column: 2; grid-row: 1;
+}
+.brand-dots i:nth-child(3) {
+  background: radial-gradient(circle at 30% 28%, #c5e69f 0%, #91d165 38%, var(--color-green) 70%, #3c7a26 100%);
+  grid-column: 1; grid-row: 2;
+}
 .brand-name {
   font-family: var(--font-display);
   font-weight: 700;
