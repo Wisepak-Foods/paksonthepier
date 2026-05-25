@@ -8,9 +8,10 @@
   const COLORS = ['#ffd680','#ff8a5a','#ff5577','#ffb347','#fff2cc','#ff9966','#ff6b9d','#ffe9a8'];
   const GRAVITY = 0.04;
   const DRAG = 0.985;
-  // Slow-motion factor for the explosion only — rocket rise (Firework
-  // class) is unchanged. 0.4 = ~40% of full speed.
-  const BURST_TIME = 0.4;
+  // Slow-motion factors. Rocket rise at half speed, explosion at
+  // quarter speed (cap height stays the same — same vy/gravity ratio).
+  const ROCKET_TIME = 0.5;
+  const BURST_TIME = 0.25;
 
   class Firework {
     constructor(w, h) {
@@ -28,8 +29,8 @@
     step() {
       this.trail.push({ x: this.x, y: this.y });
       if (this.trail.length > 6) this.trail.shift();
-      this.y += this.vy;
-      this.vy += 0.012;
+      this.y += this.vy * ROCKET_TIME;
+      this.vy += 0.012 * ROCKET_TIME;
       if (this.y <= this.targetY || this.vy >= 0) this.done = true;
     }
     draw(ctx) {
