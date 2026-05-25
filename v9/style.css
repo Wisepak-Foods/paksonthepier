@@ -75,6 +75,9 @@ a:hover { color: var(--color-orange); }
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
   gap: 3px;
+  /* Counter-clockwise tilt matches the plaque dot cluster, where
+     red sits slightly below orange and green is bottom-left. */
+  transform: rotate(-10deg);
 }
 .brand-dots i {
   width: 9px;
