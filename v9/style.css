@@ -107,9 +107,7 @@ a:hover { color: var(--color-orange); }
    slightly off the page. */
 .sign-banner {
   background: var(--color-bg);
-  /* Extra bottom padding so the drop-shadows have room to render
-     without being clipped by the featured section below. */
-  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2.5vw, 2rem) clamp(3rem, 5vw, 4.5rem);
+  padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2.5vw, 2rem) clamp(0.75rem, 1.5vw, 1rem);
 }
 .sign-banner-frame {
   position: relative;
@@ -125,9 +123,9 @@ a:hover { color: var(--color-orange); }
   /* Layered drop shadows that follow the alpha-cut plaque outline.
      Tuned strong enough to read as clearly raised off the page. */
   filter:
-    drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35))
-    drop-shadow(0 16px 28px rgba(0, 0, 0, 0.30))
-    drop-shadow(0 40px 70px rgba(0, 0, 0, 0.22));
+    drop-shadow(0 3px 6px rgba(0, 0, 0, 0.30))
+    drop-shadow(0 10px 18px rgba(0, 0, 0, 0.22))
+    drop-shadow(0 22px 35px rgba(0, 0, 0, 0.15));
 }
 /* Featured section sits closely beneath the plaque (the .sign-banner
    bottom padding already accounts for the shadow). */
