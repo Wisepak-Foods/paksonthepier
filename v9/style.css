@@ -71,35 +71,41 @@ a:hover { color: var(--color-orange); }
   gap: 0.6rem;
   text-decoration: none;
 }
+/* Equilateral triangle arrangement matching the plaque dot cluster:
+   orange directly above green (vertical line), red to the right
+   exactly midway between them. */
 .brand-dots {
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3px;
-  /* Counter-clockwise tilt matches the plaque dot cluster. */
-  transform: rotate(-10deg);
+  position: relative;
+  display: inline-block;
+  width: 23px;
+  height: 25px;
+  vertical-align: middle;
 }
 .brand-dots i {
+  position: absolute;
   width: 11px;
   height: 11px;
   border-radius: 50%;
   display: block;
-  /* Subtle bottom-right drop shadow to match the spherical plaque dots. */
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
 }
-/* Radial gradient = highlight upper-left, body color middle, darker rim
-   lower-right.  Makes each tiny dot read as a sphere instead of a flat
-   circle, mirroring the 3D plaque dots. */
 .brand-dots i:nth-child(1) {
+  /* orange — top-left */
+  top: 0;
+  left: 0;
   background: radial-gradient(circle at 30% 28%, #ffc78a 0%, #f88a35 38%, var(--color-orange) 70%, #a8520f 100%);
-  grid-column: 1; grid-row: 1;
 }
 .brand-dots i:nth-child(2) {
+  /* red — right side, vertically midway between orange and green */
+  top: 7px;
+  left: 12px;
   background: radial-gradient(circle at 30% 28%, #ffaab1 0%, #ef5564 38%, var(--color-red) 70%, #8b1f2b 100%);
-  grid-column: 2; grid-row: 1;
 }
 .brand-dots i:nth-child(3) {
+  /* green — directly below orange */
+  top: 14px;
+  left: 0;
   background: radial-gradient(circle at 30% 28%, #c5e69f 0%, #91d165 38%, var(--color-green) 70%, #3c7a26 100%);
-  grid-column: 1; grid-row: 2;
 }
 .brand-name {
   font-family: var(--font-display);
@@ -548,6 +554,10 @@ section h2 {
   margin: 0 0 0.5rem;
   color: var(--color-fg);
 }
+.menu-hero .muted {
+  color: #2a2a2a;
+  font-size: 1.05rem;
+}
 .menu-page .menu-category h2 {
   font-family: 'Pacifico', 'Brush Script MT', cursive;
   font-weight: normal;
@@ -681,6 +691,7 @@ section h2 {
 #tab-beverages:checked ~ .tab-panels #panel-beverages,
 #tab-poke:checked ~ .tab-panels #panel-poke,
 #tab-hotbowls:checked ~ .tab-panels #panel-hotbowls,
+#tab-kids:checked ~ .tab-panels #panel-kids,
 #tab-sides:checked ~ .tab-panels #panel-sides {
   display: block;
 }
@@ -688,6 +699,7 @@ section h2 {
 #tab-beverages:checked ~ .tab-labels label[for="tab-beverages"],
 #tab-poke:checked ~ .tab-labels label[for="tab-poke"],
 #tab-hotbowls:checked ~ .tab-labels label[for="tab-hotbowls"],
+#tab-kids:checked ~ .tab-labels label[for="tab-kids"],
 #tab-sides:checked ~ .tab-labels label[for="tab-sides"] {
   background: var(--color-orange);
   border-color: var(--color-orange);
@@ -697,9 +709,70 @@ section h2 {
 #tab-beverages:focus-visible ~ .tab-labels label[for="tab-beverages"],
 #tab-poke:focus-visible ~ .tab-labels label[for="tab-poke"],
 #tab-hotbowls:focus-visible ~ .tab-labels label[for="tab-hotbowls"],
+#tab-kids:focus-visible ~ .tab-labels label[for="tab-kids"],
 #tab-sides:focus-visible ~ .tab-labels label[for="tab-sides"] {
   outline: 3px solid rgba(244, 123, 32, 0.4);
   outline-offset: 2px;
+}
+
+/* Kids Meal tab — playful styling */
+.tab-label-kids {
+  background: linear-gradient(135deg, #fff9ed 0%, #ffeed1 100%);
+  border-color: #f6c98a;
+}
+.tab-label-kids:hover {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+#tab-kids:checked ~ .tab-labels .tab-label-kids {
+  background: linear-gradient(135deg, #f88a2f 0%, var(--color-orange) 100%);
+  border-color: var(--color-orange);
+}
+.kids-callout {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0.5rem 0 0.25rem;
+  text-align: center;
+}
+.kids-icon {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+}
+.kids-text {
+  max-width: 34ch;
+  text-align: center;
+}
+.kids-tagline {
+  font-family: 'Pacifico', 'Brush Script MT', cursive;
+  font-size: clamp(1.4rem, 3vw, 1.85rem);
+  color: var(--color-orange);
+  margin: 0 0 0.85rem;
+  line-height: 1.2;
+}
+.kids-includes {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-fg);
+}
+.kids-includes li {
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed var(--color-border);
+}
+.kids-includes li:last-child { border-bottom: none; }
+.kids-cal {
+  margin: 0.5rem 0 0;
+}
+@media (max-width: 520px) {
+  .kids-callout { gap: 1rem; }
+  .kids-icon { width: 120px; height: 120px; }
 }
 
 @media (max-width: 640px) {
