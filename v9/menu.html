@@ -14,11 +14,14 @@
 <meta property="og:image" content="https://paksonthepier.com/images/og-image.jpg">
 
 <meta name="theme-color" content="#1a1a1a">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <link rel="icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=2026-05-25-kids">
 
 <script type="application/ld+json">
 {
@@ -60,14 +63,20 @@
     },
     {
       "@type": "MenuSection",
+      "name": "$10 Kids Meal",
+      "hasMenuItem": [
+        {"@type":"MenuItem","name":"Kids Meal","description":"Kid-sized entrée, side or snack, juice or water","offers":{"@type":"Offer","price":"10","priceCurrency":"USD"}}
+      ]
+    },
+    {
+      "@type": "MenuSection",
       "name": "Sides & Extras",
       "hasMenuItem": [
         {"@type":"MenuItem","name":"Edamame","offers":{"@type":"Offer","price":"4","priceCurrency":"USD"}},
         {"@type":"MenuItem","name":"Side Salad","offers":{"@type":"Offer","price":"5","priceCurrency":"USD"}},
         {"@type":"MenuItem","name":"Seaweed Salad","offers":{"@type":"Offer","price":"5","priceCurrency":"USD"}},
         {"@type":"MenuItem","name":"Chips & Snacks","offers":{"@type":"Offer","price":"4","priceCurrency":"USD"}},
-        {"@type":"MenuItem","name":"Pocky Sticks","offers":{"@type":"Offer","price":"4","priceCurrency":"USD"}},
-        {"@type":"MenuItem","name":"Kids Meal","description":"Kid-sized entrée, side or snack, juice or water","offers":{"@type":"Offer","price":"10","priceCurrency":"USD"}}
+        {"@type":"MenuItem","name":"Pocky Sticks","offers":{"@type":"Offer","price":"4","priceCurrency":"USD"}}
       ]
     }
   ]
@@ -101,12 +110,14 @@
   <input type="radio" name="tab" id="tab-beverages" checked>
   <input type="radio" name="tab" id="tab-poke">
   <input type="radio" name="tab" id="tab-hotbowls">
+  <input type="radio" name="tab" id="tab-kids">
   <input type="radio" name="tab" id="tab-sides">
 
   <div class="tab-labels" role="tablist" aria-label="Menu categories">
     <label for="tab-beverages" class="tab-label">Beverages</label>
     <label for="tab-poke" class="tab-label">Poké &amp; Sushi</label>
     <label for="tab-hotbowls" class="tab-label">Hot Asian Bowls</label>
+    <label for="tab-kids" class="tab-label tab-label-kids">$10 Kids Meal</label>
     <label for="tab-sides" class="tab-label">Sides &amp; Extras</label>
   </div>
 
@@ -205,6 +216,22 @@
       </div>
     </section>
 
+    <section class="menu-category tab-panel kids-panel" id="panel-kids" aria-labelledby="tab-kids">
+      <h2>$10 Kids Meal</h2>
+      <div class="kids-callout">
+        <img src="images/icon-kid.svg" alt="" class="kids-icon" width="160" height="160">
+        <div class="kids-text">
+          <p class="kids-tagline">For our littlest pier-side eaters.</p>
+          <ul class="kids-includes">
+            <li>Kid-sized entrée</li>
+            <li>Side or snack</li>
+            <li>Juice or water</li>
+          </ul>
+          <p class="kids-cal muted small">450&ndash;600 cal</p>
+        </div>
+      </div>
+    </section>
+
     <section class="menu-category tab-panel" id="panel-sides" aria-labelledby="tab-sides">
       <h2>Sides &amp; Extras</h2>
       <div class="menu-grid">
@@ -223,9 +250,6 @@
             <li><div><span class="menu-item-name">Extra Avocado</span><span class="menu-item-cal">60 cal</span></div><span>$3</span></li>
             <li><div><span class="menu-item-name">Extra Sauce</span><span class="menu-item-cal">10&ndash;120 cal</span></div><span>$1</span></li>
           </ul>
-          <div class="menu-bowlhemoth">
-            <p><strong>$10 Kids Meal</strong> &mdash; kid-sized entrée &middot; side/snack &middot; juice or water <span class="muted small">(450&ndash;600 cal)</span></p>
-          </div>
         </div>
       </div>
     </section>
