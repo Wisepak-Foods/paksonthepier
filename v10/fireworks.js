@@ -147,12 +147,4 @@
   }
 
   document.querySelectorAll('canvas[data-fireworks]').forEach(attach);
-
-  // "Tonight at the Pier" date label — light touch JS to set today's
-  // day-of-week + month/date so the demo doesn't feel frozen.
-  const dateEl = document.getElementById('tonightDate');
-  if (dateEl) {
-    const fmt = new Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
-    dateEl.textContent = fmt.format(new Date());
-  }
 })();

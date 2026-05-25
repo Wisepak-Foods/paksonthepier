@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2026-05-25-35-v10">
+<link rel="stylesheet" href="style.css?v=2026-05-25-36-v10">
 
 <script type="application/ld+json">
 {
@@ -122,7 +122,7 @@
     <nav aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="menu.html">Menu</a>
-      <a href="#tonight">Tonight</a>
+      <a href="#pier">The Pier</a>
       <a href="#visit">Visit</a>
     </nav>
   </div>
@@ -160,11 +160,29 @@
   </div>
 </section>
 
-<!-- "Tonight at the Pier" widget. Demo content is hard-coded; production
-     would pull from Navy Pier's event feed and refresh nightly. -->
-<section class="tonight" id="tonight">
-  <canvas class="tonight-fx" data-fireworks data-slow aria-hidden="true"></canvas>
-  <div class="bokeh-field tonight-bokeh" aria-hidden="true">
+<section class="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-image">
+        <img src="images/logo.jpg" alt="Paks on the Pier logo mounted on a concrete wall" width="1400" height="818" loading="lazy">
+      </div>
+      <p class="lede">
+        From Chicago&rsquo;s sports stadiums to O&rsquo;Hare &mdash; and across
+        dozens of universities, business centers, medical buildings, and upscale
+        catering events throughout Chicagoland &mdash; our team has been feeding
+        the city for years. Now, we&rsquo;ve brought that culinary expertise to
+        Navy Pier with our first dedicated restaurant. Step in for our new, fresh,
+        made-to-order Asian bowls, poké, and sushi &mdash; served exactly the
+        way we&rsquo;d want to eat it ourselves.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- "Make a night of it" — Navy Pier links over fireworks + bokeh. -->
+<section class="pier-links" id="pier">
+  <canvas class="pier-fx" data-fireworks data-slow aria-hidden="true"></canvas>
+  <div class="bokeh-field pier-bokeh" aria-hidden="true">
     <i style="--x: 6%;  --y: 14%; --s: 12px; --d: 0.0s; --c: #ffd680;"></i>
     <i style="--x: 13%; --y: 68%; --s: 8px;  --d: 1.4s; --c: #ff8a5a;"></i>
     <i style="--x: 18%; --y: 30%; --s: 6px;  --d: 2.7s; --c: #ffe9a8;"></i>
@@ -197,82 +215,30 @@
     <i style="--x: 84%; --y: 78%; --s: 8px;  --d: 3.1s; --c: #ffa07a;"></i>
   </div>
   <div class="container">
-    <div class="tonight-card">
-      <div class="tonight-header">
-        <span class="tonight-eyebrow">Tonight at the Pier</span>
-        <span class="tonight-date" id="tonightDate">Monday, May 25</span>
-      </div>
-      <ul class="tonight-list">
-        <li>
-          <span class="tonight-time">3:00 PM</span>
-          <div>
-            <span class="tonight-event">Gizzae</span>
-            <span class="tonight-meta">Live on the Lake &middot; Beer garden &middot; free</span>
-          </div>
-        </li>
-        <li>
-          <span class="tonight-time">6:05 PM</span>
-          <div>
-            <span class="tonight-event">Calaveras LD</span>
-            <span class="tonight-meta">Live on the Lake &middot; Beer garden &middot; free</span>
-          </div>
-        </li>
-      </ul>
-      <p class="tonight-foot">
-        Pre- or post-show, swing by us at <strong>Space SA-15</strong> &mdash;
-        we&rsquo;re open until <span id="tonightCloses">10 PM</span>.
-        <a href="https://navypier.org/pier-events/live-on-the-lake/" target="_blank" rel="noopener noreferrer">See the full Live on the Lake schedule &rarr;</a>
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="story">
-  <div class="container">
-    <div class="story-grid">
-      <div class="story-image">
-        <img src="images/logo.jpg" alt="Paks on the Pier logo mounted on a concrete wall" width="1400" height="818" loading="lazy">
-      </div>
-      <p class="lede">
-        From Chicago&rsquo;s sports stadiums to O&rsquo;Hare &mdash; and across
-        dozens of universities, business centers, medical buildings, and upscale
-        catering events throughout Chicagoland &mdash; our team has been feeding
-        the city for years. Now, we&rsquo;ve brought that culinary expertise to
-        Navy Pier with our first dedicated restaurant. Step in for our new, fresh,
-        made-to-order Asian bowls, poké, and sushi &mdash; served exactly the
-        way we&rsquo;d want to eat it ourselves.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- Navy Pier badge + three official Navy Pier links the user asked for. -->
-<section class="pier-links">
-  <div class="container">
     <div class="pier-links-grid">
       <a href="https://navypier.org/" target="_blank" rel="noopener noreferrer" class="pier-links-badge" aria-label="Visit navypier.org">
         <img src="images/navy-pier-logo.png" alt="Navy Pier" width="220" height="100" loading="lazy">
       </a>
       <div class="pier-links-copy">
-        <h2>Find us on Navy Pier</h2>
-        <p>We&rsquo;re proud tenants on America&rsquo;s lakefront stage. Make it a full night out:</p>
+        <h2>Make a night of it</h2>
+        <p>Live music in the beer garden, fireworks over the lake, a Ferris wheel ride after dinner &mdash; there&rsquo;s always more on the Pier just past our door.</p>
         <ul class="pier-links-list">
           <li>
             <a href="https://navypier.org/" target="_blank" rel="noopener noreferrer">
-              <strong>Navy Pier home</strong>
-              <span>What&rsquo;s happening on the Pier &rarr;</span>
+              <strong>What&rsquo;s on the Pier</strong>
+              <span>Tonight&rsquo;s events &amp; happenings &rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://navypier.org/pier-events/live-on-the-lake/" target="_blank" rel="noopener noreferrer">
+              <strong>Live on the Lake</strong>
+              <span>Free beer-garden music, Fri&ndash;Sun &rarr;</span>
             </a>
           </li>
           <li>
             <a href="https://navypier.org/eat-drink-and-play/eat-and-drink/" target="_blank" rel="noopener noreferrer">
               <strong>Eat &amp; drink at the Pier</strong>
               <span>The full restaurant directory &rarr;</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://navypier.org/pier-events/live-on-the-lake/" target="_blank" rel="noopener noreferrer">
-              <strong>Live on the Lake</strong>
-              <span>Beer garden music &amp; events &rarr;</span>
             </a>
           </li>
         </ul>
@@ -389,6 +355,6 @@
   <p class="container fineprint">&copy; 2026 Paks on the Pier. All rights reserved.</p>
 </footer>
 
-<script src="fireworks.js?v=2026-05-25-35-v10" defer></script>
+<script src="fireworks.js?v=2026-05-25-36-v10" defer></script>
 </body>
 </html>
