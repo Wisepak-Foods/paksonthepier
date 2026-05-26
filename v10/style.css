@@ -342,7 +342,8 @@ a:hover { color: var(--color-orange); }
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  border-radius: 999px;
+  /* Match the plaque silhouette: rounded-rectangle, not pill */
+  border-radius: 14px;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
