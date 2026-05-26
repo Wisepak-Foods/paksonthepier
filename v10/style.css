@@ -911,14 +911,12 @@ section h2 {
 }
 
 .ferris-corner {
-  position: absolute;
-  right: clamp(1rem, 3vw, 2.5rem);
-  bottom: 0;
-  width: clamp(130px, 16vw, 200px);
-  height: clamp(130px, 16vw, 200px);
+  display: block;
+  width: clamp(140px, 30vw, 220px);
+  height: clamp(140px, 30vw, 220px);
+  margin: 1rem auto 1.25rem;
   opacity: 0.5;
   pointer-events: none;
-  z-index: 0;
   filter: blur(0.8px) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
 }
 .ferris-corner svg {
