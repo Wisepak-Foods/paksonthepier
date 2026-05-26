@@ -911,15 +911,15 @@ section h2 {
 }
 
 .ferris-corner {
-  position: fixed;
-  right: clamp(0.5rem, 2vw, 1.5rem);
-  bottom: clamp(0.5rem, 2vw, 1.5rem);
-  width: clamp(100px, 14vw, 160px);
-  height: clamp(100px, 14vw, 160px);
-  opacity: 0.85;
+  position: absolute;
+  right: clamp(1rem, 3vw, 2.5rem);
+  bottom: clamp(1rem, 3vw, 2.5rem);
+  width: clamp(110px, 14vw, 170px);
+  height: clamp(110px, 14vw, 170px);
+  opacity: 0.95;
   pointer-events: none;
-  z-index: 5;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.25));
+  z-index: 0;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
 }
 .ferris-corner svg {
   width: 100%;
