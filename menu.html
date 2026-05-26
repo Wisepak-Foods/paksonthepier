@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2026-05-25-kids">
+<link rel="stylesheet" href="style.css?v=2026-05-25-flip">
 
 <script type="application/ld+json">
 {
@@ -260,6 +260,21 @@
 <p class="center back-link"><a href="index.html" class="btn btn-ghost">&larr; Back to home</a></p>
 
 </main>
+
+<script>
+(function () {
+  var validTabs = ['beverages', 'poke', 'hotbowls', 'kids', 'sides'];
+  var params = new URLSearchParams(window.location.search);
+  var tab = params.get('tab');
+  if (!tab && window.location.hash) {
+    tab = window.location.hash.replace(/^#(tab-)?/, '');
+  }
+  if (tab && validTabs.indexOf(tab) !== -1) {
+    var radio = document.getElementById('tab-' + tab);
+    if (radio) radio.checked = true;
+  }
+})();
+</script>
 
 <footer class="site-footer">
   <div class="container footer-grid">
