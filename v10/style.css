@@ -914,12 +914,12 @@ section h2 {
   position: fixed;
   right: clamp(0.5rem, 2vw, 1.5rem);
   bottom: clamp(0.5rem, 2vw, 1.5rem);
-  width: clamp(80px, 12vw, 140px);
-  height: clamp(80px, 12vw, 140px);
-  opacity: 0.55;
+  width: clamp(100px, 14vw, 160px);
+  height: clamp(100px, 14vw, 160px);
+  opacity: 0.85;
   pointer-events: none;
   z-index: 5;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.25));
 }
 .ferris-corner svg {
   width: 100%;

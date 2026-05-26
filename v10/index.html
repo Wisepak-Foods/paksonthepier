@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2026-05-25-40-v10">
+<link rel="stylesheet" href="style.css?v=2026-05-25-41-v10">
 
 <script type="application/ld+json">
 {
@@ -288,6 +288,14 @@
        are white the next pass turns them blue one by one). -->
 <div class="ferris-corner" aria-hidden="true">
   <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="ferris-sky" cx="50%" cy="50%" r="55%">
+        <stop offset="0%"   stop-color="#0a1430" stop-opacity="0.85"/>
+        <stop offset="70%"  stop-color="#0a1430" stop-opacity="0.55"/>
+        <stop offset="100%" stop-color="#0a1430" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <circle cx="100" cy="100" r="110" fill="url(#ferris-sky)"/>
     <g class="ferris-outer" style="transform-origin: 100px 100px;">
       <circle cx="100" cy="100" r="84" fill="none" stroke="#ffffff" stroke-width="4"
               stroke-dasharray="22 44" stroke-linecap="round"/>
@@ -357,6 +365,6 @@
   <p class="container fineprint">&copy; 2026 Paks on the Pier. All rights reserved.</p>
 </footer>
 
-<script src="fireworks.js?v=2026-05-25-40-v10" defer></script>
+<script src="fireworks.js?v=2026-05-25-41-v10" defer></script>
 </body>
 </html>
