@@ -918,23 +918,35 @@ section h2 {
   bottom: clamp(0.5rem, 2vw, 1.5rem);
   width: clamp(80px, 12vw, 140px);
   height: clamp(80px, 12vw, 140px);
-  color: var(--color-orange);
-  opacity: 0.32;
+  opacity: 0.55;
   pointer-events: none;
   z-index: 5;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
 }
 .ferris-corner svg {
   width: 100%;
   height: 100%;
   overflow: visible;
 }
-.ferris-spin {
-  animation: ferris-rotate 45s linear infinite;
-}
+
+.ferris-outer { animation: ferris-rotate 24s linear infinite; }
 @keyframes ferris-rotate {
   to { transform: rotate(360deg); }
 }
+
+/* Each spoke runs the same 16s blue-then-white cycle. Negative delays
+   stagger by 1s, so at any moment the wave of "now turning white" then
+   "now turning blue" marches counter-clockwise around the wheel. */
+.spoke {
+  stroke: #2f7bff;
+  animation: spoke-color 16s step-end infinite;
+  animation-delay: calc((var(--i) - 16) * 1s);
+}
+@keyframes spoke-color {
+  0%   { stroke: #ffffff; }
+  50%  { stroke: #2f7bff; }
+}
+
 @media (max-width: 640px) {
   .ferris-corner { display: none; }
 }
