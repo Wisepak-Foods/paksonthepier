@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2026-05-25-46-v10">
+<link rel="stylesheet" href="style.css?v=2026-05-25-v10-flip">
 
 <script type="application/ld+json">
 {
@@ -140,21 +140,41 @@
 <section class="featured">
   <div class="container">
     <div class="cards">
-      <article class="card">
-        <img src="images/icon-bowl.svg?v=2" alt="" class="card-icon" loading="lazy" width="100" height="100">
-        <h3>Hot Asian Bowls</h3>
-        <p>Pick your base &mdash; steamed rice, sushi rice, glass noodles, or mixed greens &mdash; and a protein: bulgogi beef, teriyaki chicken, or spicy pork. Five toppers and sauces included.</p>
-      </article>
-      <article class="card">
-        <img src="images/icon-sushi.svg" alt="" class="card-icon" loading="lazy" width="100" height="100">
-        <h3>Poké &amp; Sushi</h3>
-        <p>Poké bowls, hand-rolled sushi, or sushi burritos. Spicy tuna, spicy salmon, shrimp tempura, California, or tofu &amp; veggie.</p>
-      </article>
-      <article class="card">
+      <a class="card card-flip" href="menu.html?tab=hotbowls" aria-label="Hot Asian Bowls — view menu">
+        <span class="card-flip-inner">
+          <span class="card-face card-face-front">
+            <img src="images/icon-bowl.svg?v=2" alt="" class="card-icon" loading="lazy" width="100" height="100">
+            <h3>Hot Asian Bowls</h3>
+            <p>Pick your base &mdash; steamed rice, sushi rice, glass noodles, or mixed greens &mdash; and a protein: bulgogi beef, teriyaki chicken, or spicy pork. Five toppers and sauces included.</p>
+          </span>
+          <span class="card-face card-face-back" style="background-image:url('images/dish-korean-bowl.jpg')">
+            <span class="card-face-scrim">
+              <h3>Hot Asian Bowls</h3>
+              <p class="card-cta">View menu &rarr;</p>
+            </span>
+          </span>
+        </span>
+      </a>
+      <a class="card card-flip" href="menu.html?tab=poke" aria-label="Poké and Sushi — view menu">
+        <span class="card-flip-inner">
+          <span class="card-face card-face-front">
+            <img src="images/icon-sushi.svg" alt="" class="card-icon" loading="lazy" width="100" height="100">
+            <h3>Poké &amp; Sushi</h3>
+            <p>Poké bowls, hand-rolled sushi, or sushi burritos. Spicy tuna, spicy salmon, shrimp tempura, California, or tofu &amp; veggie.</p>
+          </span>
+          <span class="card-face card-face-back" style="background-image:url('images/dish-poke.jpg')">
+            <span class="card-face-scrim">
+              <h3>Poké &amp; Sushi</h3>
+              <p class="card-cta">View menu &rarr;</p>
+            </span>
+          </span>
+        </span>
+      </a>
+      <a class="card" href="menu.html?tab=poke" aria-label="The Bowl-hemoth — view menu">
         <img src="images/icon-pokebowl.svg" alt="" class="card-icon" loading="lazy" width="100" height="100">
         <h3>The Bowl-hemoth</h3>
         <p>Anything. Everything. Upgrade any bowl to the Bowl-hemoth and load it up &mdash; for those who really mean it.</p>
-      </article>
+      </a>
     </div>
     <p class="center"><a href="menu.html" class="btn btn-primary">View full menu</a></p>
   </div>
