@@ -141,11 +141,15 @@ a:hover { color: var(--color-orange); }
   height: auto;
   display: block;
   /* Layered drop shadows that follow the alpha-cut plaque outline.
-     Tuned strong enough to read as clearly raised off the page. */
+     Tuned strong enough to read as clearly raised off the page.
+     will-change + translateZ(0) promote to own GPU layer so the
+     drop-shadow mask is cached, not recomputed per WebP frame. */
   filter:
     drop-shadow(0 3px 6px rgba(0, 0, 0, 0.30))
     drop-shadow(0 10px 18px rgba(0, 0, 0, 0.22))
     drop-shadow(0 22px 35px rgba(0, 0, 0, 0.15));
+  will-change: transform;
+  transform: translateZ(0);
 }
 /* Featured section sits closely beneath the plaque (the .sign-banner
    bottom padding already accounts for the shadow). */
