@@ -886,16 +886,14 @@ section h2 {
 .pier-links-list a {
   display: block;
   text-decoration: none;
-  padding: 0.85rem 1rem;
-  border: 1px solid rgba(255, 214, 128, 0.22);
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.04);
-  transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+  padding: 0.6rem 0;
+  transition: transform 0.15s ease, color 0.15s ease;
 }
 .pier-links-list a:hover {
-  border-color: #ffd680;
-  background: rgba(255, 214, 128, 0.08);
   transform: translateX(3px);
+}
+.pier-links-list a:hover strong {
+  color: #ffd680;
 }
 .pier-links-list a strong {
   display: block;
