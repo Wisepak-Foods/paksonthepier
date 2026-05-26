@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2026-05-25-flip3">
+<link rel="stylesheet" href="style.css?v=2026-05-25-promo">
 
 <script type="application/ld+json">
 {
@@ -122,6 +122,7 @@
     <nav aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="menu.html">Menu</a>
+      <a href="#pier">The Pier</a>
       <a href="#visit">Visit</a>
     </nav>
   </div>
@@ -242,6 +243,109 @@
   </div>
 </section>
 
+<!-- "Make a night of it" — Navy Pier links over fireworks + bokeh. -->
+<section class="pier-links" id="pier">
+  <canvas class="pier-fx" data-fireworks data-slow aria-hidden="true"></canvas>
+  <div class="bokeh-field pier-bokeh" aria-hidden="true">
+    <i style="--x: 6%;  --y: 14%; --s: 12px; --d: 0.0s; --c: #ffd680;"></i>
+    <i style="--x: 13%; --y: 68%; --s: 8px;  --d: 1.4s; --c: #ff8a5a;"></i>
+    <i style="--x: 18%; --y: 30%; --s: 6px;  --d: 2.7s; --c: #ffe9a8;"></i>
+    <i style="--x: 22%; --y: 88%; --s: 10px; --d: 0.7s; --c: #ff5577;"></i>
+    <i style="--x: 28%; --y: 10%; --s: 7px;  --d: 3.2s; --c: #ffd680;"></i>
+    <i style="--x: 34%; --y: 52%; --s: 14px; --d: 1.9s; --c: #ffb347;"></i>
+    <i style="--x: 40%; --y: 24%; --s: 5px;  --d: 0.4s; --c: #fff2cc;"></i>
+    <i style="--x: 46%; --y: 78%; --s: 11px; --d: 2.8s; --c: #ff9966;"></i>
+    <i style="--x: 52%; --y: 14%; --s: 13px; --d: 1.6s; --c: #ffa07a;"></i>
+    <i style="--x: 58%; --y: 60%; --s: 7px;  --d: 1.0s; --c: #ffd166;"></i>
+    <i style="--x: 64%; --y: 36%; --s: 12px; --d: 2.2s; --c: #ff6b9d;"></i>
+    <i style="--x: 70%; --y: 84%; --s: 6px;  --d: 3.4s; --c: #ffe9a8;"></i>
+    <i style="--x: 76%; --y: 22%; --s: 9px;  --d: 0.6s; --c: #ff8a5a;"></i>
+    <i style="--x: 82%; --y: 64%; --s: 11px; --d: 1.8s; --c: #ffd680;"></i>
+    <i style="--x: 88%; --y: 12%; --s: 13px; --d: 3.0s; --c: #ffb347;"></i>
+    <i style="--x: 94%; --y: 46%; --s: 6px;  --d: 0.3s; --c: #fff2cc;"></i>
+    <i style="--x: 97%; --y: 86%; --s: 10px; --d: 1.5s; --c: #ff5577;"></i>
+    <i style="--x: 3%;  --y: 50%; --s: 8px;  --d: 2.6s; --c: #ff9966;"></i>
+    <i style="--x: 50%; --y: 92%; --s: 9px;  --d: 0.9s; --c: #ffd166;"></i>
+    <i style="--x: 80%; --y: 6%;  --s: 11px; --d: 2.0s; --c: #ffa07a;"></i>
+    <i style="--x: 25%; --y: 60%; --s: 7px;  --d: 1.2s; --c: #ff6b9d;"></i>
+    <i style="--x: 60%; --y: 28%; --s: 12px; --d: 2.4s; --c: #ffe9a8;"></i>
+    <i style="--x: 8%;  --y: 82%; --s: 8px;  --d: 0.5s; --c: #ff8a5a;"></i>
+    <i style="--x: 92%; --y: 30%; --s: 10px; --d: 1.9s; --c: #ffd680;"></i>
+    <i style="--x: 44%; --y: 6%;  --s: 13px; --d: 2.9s; --c: #ffb347;"></i>
+    <i style="--x: 16%; --y: 42%; --s: 7px;  --d: 0.8s; --c: #fff2cc;"></i>
+    <i style="--x: 68%; --y: 50%; --s: 11px; --d: 1.7s; --c: #ff9966;"></i>
+    <i style="--x: 36%; --y: 90%; --s: 6px;  --d: 2.5s; --c: #ff5577;"></i>
+    <i style="--x: 56%; --y: 76%; --s: 14px; --d: 0.2s; --c: #ffd166;"></i>
+    <i style="--x: 84%; --y: 78%; --s: 8px;  --d: 3.1s; --c: #ffa07a;"></i>
+  </div>
+  <!-- Centennial Wheel silhouette rests on the section's bottom
+       border: outer dashed rim (no cabins) rotates CW; each direction
+       has a paired blue static spoke + an inside spoke that color-
+       cycles in a CCW wave. -->
+  <div class="ferris-corner" aria-hidden="true">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g class="ferris-outer" style="transform-origin: 100px 100px;">
+        <circle cx="100" cy="100" r="84" fill="none" stroke="#ffffff" stroke-width="4"
+                stroke-dasharray="22 44"/>
+      </g>
+      <g class="ferris-static" stroke="#2f7bff" stroke-width="2.2" stroke-linecap="round" fill="none">
+        <line x1="105"    y1="100"   x2="105"    y2="22"/>
+        <line x1="103.54" y1="96.46" x2="48.54"  y2="41.46"/>
+        <line x1="100"    y1="95"    x2="22"     y2="95"/>
+        <line x1="96.46"  y1="96.46" x2="41.46"  y2="151.46"/>
+        <line x1="95"     y1="100"   x2="95"     y2="178"/>
+        <line x1="96.46"  y1="103.54" x2="151.46" y2="158.54"/>
+        <line x1="100"    y1="105"   x2="178"    y2="105"/>
+        <line x1="103.54" y1="103.54" x2="158.54" y2="41.46"/>
+      </g>
+      <g class="ferris-inner" stroke-width="2.2" stroke-linecap="round" fill="none">
+        <line class="spoke" style="--i:0" x1="100" y1="100" x2="100" y2="22"/>
+        <line class="spoke" style="--i:1" x1="100" y1="100" x2="45"  y2="45"/>
+        <line class="spoke" style="--i:2" x1="100" y1="100" x2="22"  y2="100"/>
+        <line class="spoke" style="--i:3" x1="100" y1="100" x2="45"  y2="155"/>
+        <line class="spoke" style="--i:4" x1="100" y1="100" x2="100" y2="178"/>
+        <line class="spoke" style="--i:5" x1="100" y1="100" x2="155" y2="155"/>
+        <line class="spoke" style="--i:6" x1="100" y1="100" x2="178" y2="100"/>
+        <line class="spoke" style="--i:7" x1="100" y1="100" x2="155" y2="45"/>
+      </g>
+      <circle cx="100" cy="100" r="5" fill="#ffffff"/>
+      <g stroke="#ffffff" stroke-width="2.2" fill="none" stroke-linecap="round">
+        <line x1="100" y1="100" x2="55"  y2="200"/>
+        <line x1="100" y1="100" x2="145" y2="200"/>
+        <line x1="32"  y1="197" x2="168" y2="197"/>
+      </g>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="pier-links-grid">
+      <div class="pier-links-copy">
+        <h2>Make a night of it</h2>
+        <p>Live music in the beer garden, fireworks over the lake, a Ferris wheel ride after dinner &mdash; there&rsquo;s always more on the Pier just past our door.</p>
+        <ul class="pier-links-list">
+          <li>
+            <a href="https://navypier.org/" target="_blank" rel="noopener noreferrer">
+              <strong>What&rsquo;s on the Pier</strong>
+              <span>Tonight&rsquo;s events &amp; happenings &rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://navypier.org/pier-events/live-on-the-lake/" target="_blank" rel="noopener noreferrer">
+              <strong>Live on the Lake</strong>
+              <span>Free beer-garden music, Fri&ndash;Sun &rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://navypier.org/eat-drink-and-play/eat-and-drink/" target="_blank" rel="noopener noreferrer">
+              <strong>Eat &amp; drink at the Pier</strong>
+              <span>The full restaurant directory &rarr;</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer class="site-footer">
@@ -261,6 +365,14 @@
       </p>
     </div>
     <div>
+      <h4>Navy Pier</h4>
+      <p>
+        <a href="https://navypier.org/" target="_blank" rel="noopener noreferrer">Navy Pier home</a><br>
+        <a href="https://navypier.org/eat-drink-and-play/eat-and-drink/" target="_blank" rel="noopener noreferrer">Eat &amp; Drink</a><br>
+        <a href="https://navypier.org/pier-events/live-on-the-lake/" target="_blank" rel="noopener noreferrer">Live on the Lake</a>
+      </p>
+    </div>
+    <div>
       <h4>Follow</h4>
       <p><a href="https://www.facebook.com/profile.php?id=100056302220165" target="_blank" rel="noopener noreferrer">Facebook</a></p>
     </div>
@@ -272,5 +384,6 @@
   <p class="container fineprint">&copy; 2026 Paks on the Pier. All rights reserved.</p>
 </footer>
 
+<script src="fireworks.js?v=2026-05-25-promo" defer></script>
 </body>
 </html>
