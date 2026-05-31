@@ -741,6 +741,85 @@ section h2 {
 }
 .back-link { padding: 1.5rem 0 3rem; }
 
+/* Protein flip card — click a protein to flip the column over the dish photo */
+.protein-flip {
+  position: relative;
+  perspective: 1400px;
+}
+.protein-flip-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+  min-height: 100%;
+}
+.protein-flip.is-flipped .protein-flip-inner {
+  transform: rotateY(180deg);
+}
+.protein-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius);
+}
+.protein-face-front {
+  position: relative;
+}
+.protein-flip .menu-list li[data-protein-name] {
+  cursor: pointer;
+  transition: background 0.15s ease;
+  border-radius: 6px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+.protein-flip .menu-list li[data-protein-name]:hover {
+  background: rgba(244, 123, 32, 0.08);
+}
+.protein-face-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+}
+.protein-face-scrim {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem 1.75rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0) 100%);
+  border-radius: var(--radius);
+  color: #fff;
+}
+.protein-flip-name {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 0.35rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+.protein-flip-desc {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+.protein-flip-hint {
+  margin-top: 0.85rem;
+  font-size: 0.8rem;
+  color: var(--color-orange);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+@media (prefers-reduced-motion: reduce) {
+  .protein-flip-inner { transition: none; }
+}
+
 /* Mobile */
 @media (max-width: 640px) {
   .nav nav { gap: 1rem; }

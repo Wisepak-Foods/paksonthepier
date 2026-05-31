@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2026-05-28-v11-menu-font">
+<link rel="stylesheet" href="style.css?v=2026-05-31-v11-protein-flip">
 
 <script type="application/ld+json">
 {
@@ -211,15 +211,26 @@
             <li><div><span class="menu-item-name">Mixed Greens</span><span class="menu-item-desc">Balanced blend, leafy and vibrant</span></div><span class="menu-item-cal">40 cal</span></li>
           </ul>
         </div>
-        <div>
-          <h3>Choose your protein</h3>
-          <ul class="menu-list">
-            <li><div><span class="menu-item-name">Bulgogi Beef</span><span class="menu-item-desc">Classic Korean-style, thinly sliced</span></div><span class="menu-item-cal">+250 cal</span></li>
-            <li><div><span class="menu-item-name">Teriyaki Chicken</span><span class="menu-item-desc">Traditional sweet and savory glaze</span></div><span class="menu-item-cal">+230 cal</span></li>
-            <li><div><span class="menu-item-name">Spicy Pork</span><span class="menu-item-desc">Gochujang marinade with a bit of heat</span></div><span class="menu-item-cal">+295 cal</span></li>
-          </ul>
-          <div class="menu-bowlhemoth">
-            <p><strong>$22 Hot Bowl-hemoth</strong> &mdash; anything &middot; everything <span class="muted small">(820&ndash;1280 cal)</span></p>
+        <div class="protein-flip" data-protein-flip>
+          <div class="protein-flip-inner">
+            <div class="protein-face protein-face-front">
+              <h3>Choose your protein</h3>
+              <ul class="menu-list">
+                <li data-protein-name="Bulgogi Beef" data-protein-desc="Classic Korean-style, thinly sliced"><div><span class="menu-item-name">Bulgogi Beef</span><span class="menu-item-desc">Classic Korean-style, thinly sliced</span></div><span class="menu-item-cal">+250 cal</span></li>
+                <li data-protein-name="Teriyaki Chicken" data-protein-desc="Traditional sweet and savory glaze"><div><span class="menu-item-name">Teriyaki Chicken</span><span class="menu-item-desc">Traditional sweet and savory glaze</span></div><span class="menu-item-cal">+230 cal</span></li>
+                <li data-protein-name="Spicy Pork" data-protein-desc="Gochujang marinade with a bit of heat"><div><span class="menu-item-name">Spicy Pork</span><span class="menu-item-desc">Gochujang marinade with a bit of heat</span></div><span class="menu-item-cal">+295 cal</span></li>
+              </ul>
+              <div class="menu-bowlhemoth">
+                <p><strong>$22 Hot Bowl-hemoth</strong> &mdash; anything &middot; everything <span class="muted small">(820&ndash;1280 cal)</span></p>
+              </div>
+            </div>
+            <div class="protein-face protein-face-back" style="background-image:url('images/dish-korean-bowl.jpg?v=5-new')" role="button" tabindex="0" aria-label="Back to protein list">
+              <div class="protein-face-scrim">
+                <span class="protein-flip-name" data-protein-flip-name></span>
+                <span class="protein-flip-desc" data-protein-flip-desc></span>
+                <span class="protein-flip-hint">Tap to go back</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -282,6 +293,26 @@
     var radio = document.getElementById('tab-' + tab);
     if (radio) radio.checked = true;
   }
+})();
+
+(function () {
+  document.querySelectorAll('[data-protein-flip]').forEach(function (flip) {
+    var nameEl = flip.querySelector('[data-protein-flip-name]');
+    var descEl = flip.querySelector('[data-protein-flip-desc]');
+    var back = flip.querySelector('.protein-face-back');
+    flip.querySelectorAll('li[data-protein-name]').forEach(function (li) {
+      li.addEventListener('click', function () {
+        nameEl.textContent = li.dataset.proteinName;
+        descEl.textContent = li.dataset.proteinDesc;
+        flip.classList.add('is-flipped');
+      });
+    });
+    function unflip() { flip.classList.remove('is-flipped'); }
+    back.addEventListener('click', unflip);
+    back.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); unflip(); }
+    });
+  });
 })();
 </script>
 
