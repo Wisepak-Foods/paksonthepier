@@ -774,16 +774,20 @@ section h2 {
 .protein-face-front {
   position: relative;
 }
-.protein-flip .menu-list li[data-protein-name] {
+.protein-flip .menu-list li[data-protein-name],
+.protein-flip [data-protein-name].menu-bowlhemoth {
   cursor: pointer;
   transition: background 0.15s ease;
   border-radius: 6px;
+}
+.protein-flip .menu-list li[data-protein-name] {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   margin-left: -0.5rem;
   margin-right: -0.5rem;
 }
-.protein-flip .menu-list li[data-protein-name]:hover {
+.protein-flip .menu-list li[data-protein-name]:hover,
+.protein-flip [data-protein-name].menu-bowlhemoth:hover {
   background: rgba(244, 123, 32, 0.08);
 }
 .protein-face-back {
