@@ -1128,6 +1128,7 @@ section h2 {
 }
 
 .ferris-outer { animation: ferris-rotate 24s linear infinite; }
+.ferris-inner { animation: ferris-rotate 24s linear infinite reverse; }
 @keyframes ferris-rotate {
   to { transform: rotate(360deg); }
 }
