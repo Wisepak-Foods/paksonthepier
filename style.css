@@ -151,6 +151,17 @@ a:hover { color: var(--color-orange); }
   will-change: transform;
   transform: translateZ(0);
 }
+.sign-banner-tagline {
+  max-width: 1100px;
+  margin: 1.1rem auto 0;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  letter-spacing: 0.02em;
+  color: var(--color-muted);
+  padding: 0 1rem;
+}
+
 /* Featured section sits closely beneath the plaque (the .sign-banner
    bottom padding already accounts for the shadow). */
 .sign-banner + .featured {
@@ -650,10 +661,11 @@ section h2 {
   text-align: center;
 }
 .menu-hero h1 {
-  font-family: 'Pacifico', 'Brush Script MT', cursive;
-  font-weight: normal;
+  font-family: var(--font-display);
+  font-weight: 700;
   font-size: clamp(2.5rem, 6vw, 3.75rem);
   line-height: 1.15;
+  letter-spacing: 0.01em;
   margin: 0 0 0.5rem;
   color: var(--color-fg);
 }
@@ -662,10 +674,11 @@ section h2 {
   font-size: 1.05rem;
 }
 .menu-page .menu-category h2 {
-  font-family: 'Pacifico', 'Brush Script MT', cursive;
-  font-weight: normal;
+  font-family: var(--font-display);
+  font-weight: 700;
   font-size: clamp(2rem, 4.5vw, 2.85rem);
   line-height: 1.2;
+  letter-spacing: 0.01em;
 }
 .menu-page .menu-category h2 .card-price {
   font-family: var(--font-body);
@@ -738,6 +751,89 @@ section h2 {
   border-top: 1px solid var(--color-border);
 }
 .back-link { padding: 1.5rem 0 3rem; }
+
+/* Protein flip card — click a protein to flip the column over the dish photo */
+.protein-flip {
+  position: relative;
+  perspective: 1400px;
+}
+.protein-flip-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+  min-height: 100%;
+}
+.protein-flip.is-flipped .protein-flip-inner {
+  transform: rotateY(180deg);
+}
+.protein-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius);
+}
+.protein-face-front {
+  position: relative;
+}
+.protein-flip .menu-list li[data-protein-name],
+.protein-flip [data-protein-name].menu-bowlhemoth {
+  cursor: pointer;
+  transition: background 0.15s ease;
+  border-radius: 6px;
+}
+.protein-flip .menu-list li[data-protein-name] {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+.protein-flip .menu-list li[data-protein-name]:hover,
+.protein-flip [data-protein-name].menu-bowlhemoth:hover {
+  background: rgba(244, 123, 32, 0.08);
+}
+.protein-face-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+}
+.protein-face-scrim {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem 1.75rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0) 100%);
+  border-radius: var(--radius);
+  color: #fff;
+}
+.protein-flip-name {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 0.35rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+.protein-flip-desc {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+.protein-flip-hint {
+  margin-top: 0.85rem;
+  font-size: 0.8rem;
+  color: var(--color-orange);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+@media (prefers-reduced-motion: reduce) {
+  .protein-flip-inner { transition: none; }
+}
 
 /* Mobile */
 @media (max-width: 640px) {
