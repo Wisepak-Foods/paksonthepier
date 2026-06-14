@@ -831,6 +831,26 @@ section h2 {
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
+.protein-face-back.no-image {
+  background-image: none;
+  background-color: var(--color-orange);
+}
+.protein-face-back.no-image .protein-face-scrim {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-orange) 0%, #d8641a 100%);
+}
+.protein-flip-soon {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.35);
+}
+.protein-face-back.no-image .protein-flip-hint {
+  color: #fff;
+}
 @media (prefers-reduced-motion: reduce) {
   .protein-flip-inner { transition: none; }
 }
