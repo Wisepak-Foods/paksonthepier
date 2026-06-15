@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2026-06-01-v11-flip-images">
+<link rel="stylesheet" href="style.css?v=2026-06-01-v11-ferris-ccw">
 
 <script type="application/ld+json">
 {
@@ -182,12 +182,12 @@
             <li><div><span class="menu-item-name">Sushi Burrito</span><span class="menu-item-desc">Loaded jumbo roll, nori outside</span></div><span class="menu-item-cal">380&ndash;500 cal</span></li>
           </ul>
         </div>
-        <div class="protein-flip" data-protein-flip data-default-image="images/dish-poke.jpg?v=4-shrimp-crab">
+        <div class="protein-flip" data-protein-flip>
           <div class="protein-flip-inner">
             <div class="protein-face protein-face-front">
               <h3>Choose your protein</h3>
               <ul class="menu-list">
-                <li data-protein-name="Shrimp Tempura" data-protein-desc="Crispy golden shrimp · surimi · teriyaki"><div><span class="menu-item-name">Shrimp Tempura</span><span class="menu-item-desc">Crispy golden shrimp &middot; surimi &middot; teriyaki</span></div><span class="menu-item-cal">+220 cal</span></li>
+                <li data-protein-name="Shrimp Tempura" data-protein-desc="Crispy golden shrimp · surimi · teriyaki" data-protein-image="images/dish-poke.jpg?v=4-shrimp-crab"><div><span class="menu-item-name">Shrimp Tempura</span><span class="menu-item-desc">Crispy golden shrimp &middot; surimi &middot; teriyaki</span></div><span class="menu-item-cal">+220 cal</span></li>
                 <li data-protein-name="California" data-protein-desc="Premium surimi · teriyaki"><div><span class="menu-item-name">California</span><span class="menu-item-desc">Premium surimi &middot; teriyaki</span></div><span class="menu-item-cal">+120 cal</span></li>
                 <li data-protein-name="Spicy Tuna" data-protein-desc="Ahi tuna · Thai chili sauce"><div><span class="menu-item-name">Spicy Tuna</span><span class="menu-item-desc">Ahi tuna &middot; Thai chili sauce</span></div><span class="menu-item-cal">+140 cal</span></li>
                 <li data-protein-name="Spicy Salmon" data-protein-desc="Scottish salmon · Thai chili sauce"><div><span class="menu-item-name">Spicy Salmon</span><span class="menu-item-desc">Scottish salmon &middot; Thai chili sauce</span></div><span class="menu-item-cal">+160 cal</span></li>
@@ -199,6 +199,7 @@
             </div>
             <div class="protein-face protein-face-back" role="button" tabindex="0" aria-label="Back to protein list">
               <div class="protein-face-scrim">
+                <span class="protein-flip-soon" data-protein-flip-soon hidden>Photo coming soon</span>
                 <span class="protein-flip-name" data-protein-flip-name></span>
                 <span class="protein-flip-desc" data-protein-flip-desc></span>
                 <span class="protein-flip-hint">Tap to go back</span>
@@ -222,12 +223,12 @@
             <li><div><span class="menu-item-name">Mixed Greens</span><span class="menu-item-desc">Balanced blend, leafy and vibrant</span></div><span class="menu-item-cal">40 cal</span></li>
           </ul>
         </div>
-        <div class="protein-flip" data-protein-flip data-default-image="images/dish-korean-bowl.jpg?v=5-new">
+        <div class="protein-flip" data-protein-flip>
           <div class="protein-flip-inner">
             <div class="protein-face protein-face-front">
               <h3>Choose your protein</h3>
               <ul class="menu-list">
-                <li data-protein-name="Bulgogi Beef" data-protein-desc="Classic Korean-style, thinly sliced"><div><span class="menu-item-name">Bulgogi Beef</span><span class="menu-item-desc">Classic Korean-style, thinly sliced</span></div><span class="menu-item-cal">+250 cal</span></li>
+                <li data-protein-name="Bulgogi Beef" data-protein-desc="Classic Korean-style, thinly sliced" data-protein-image="images/dish-korean-bowl.jpg?v=5-new"><div><span class="menu-item-name">Bulgogi Beef</span><span class="menu-item-desc">Classic Korean-style, thinly sliced</span></div><span class="menu-item-cal">+250 cal</span></li>
                 <li data-protein-name="Teriyaki Chicken" data-protein-desc="Traditional sweet and savory glaze"><div><span class="menu-item-name">Teriyaki Chicken</span><span class="menu-item-desc">Traditional sweet and savory glaze</span></div><span class="menu-item-cal">+230 cal</span></li>
                 <li data-protein-name="Spicy Pork" data-protein-desc="Gochujang marinade with a bit of heat"><div><span class="menu-item-name">Spicy Pork</span><span class="menu-item-desc">Gochujang marinade with a bit of heat</span></div><span class="menu-item-cal">+295 cal</span></li>
               </ul>
@@ -237,6 +238,7 @@
             </div>
             <div class="protein-face protein-face-back" role="button" tabindex="0" aria-label="Back to protein list">
               <div class="protein-face-scrim">
+                <span class="protein-flip-soon" data-protein-flip-soon hidden>Photo coming soon</span>
                 <span class="protein-flip-name" data-protein-flip-name></span>
                 <span class="protein-flip-desc" data-protein-flip-desc></span>
                 <span class="protein-flip-hint">Tap to go back</span>
@@ -310,13 +312,22 @@
   document.querySelectorAll('[data-protein-flip]').forEach(function (flip) {
     var nameEl = flip.querySelector('[data-protein-flip-name]');
     var descEl = flip.querySelector('[data-protein-flip-desc]');
+    var soonEl = flip.querySelector('[data-protein-flip-soon]');
     var back = flip.querySelector('.protein-face-back');
     var defaultImage = flip.dataset.defaultImage;
     function showFor(el) {
       nameEl.textContent = el.dataset.proteinName;
       descEl.textContent = el.dataset.proteinDesc;
       var img = el.dataset.proteinImage || defaultImage;
-      if (img) back.style.backgroundImage = "url('" + img + "')";
+      if (img) {
+        back.style.backgroundImage = "url('" + img + "')";
+        back.classList.remove('no-image');
+        if (soonEl) soonEl.hidden = true;
+      } else {
+        back.style.backgroundImage = '';
+        back.classList.add('no-image');
+        if (soonEl) soonEl.hidden = false;
+      }
       flip.classList.add('is-flipped');
     }
     flip.querySelectorAll('[data-protein-name]').forEach(function (item) {
