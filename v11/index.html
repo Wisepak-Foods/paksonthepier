@@ -401,5 +401,25 @@
 </footer>
 
 <script src="fireworks.js?v=2026-05-25-46-v10" defer></script>
+<script>
+// Click the brand dots to morph them into a sushi roll (toggle).
+(function () {
+  document.querySelectorAll('.brand-dots').forEach(function (dots) {
+    if (!dots.querySelector('.brand-roll')) {
+      var img = document.createElement('img');
+      img.className = 'brand-roll';
+      img.src = 'images/logo-sushi-roll.png?v=1';
+      img.width = 36; img.height = 36;
+      img.alt = ''; img.setAttribute('aria-hidden', 'true');
+      dots.appendChild(img);
+    }
+    dots.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      dots.classList.toggle('morphed');
+    });
+  });
+})();
+</script>
 </body>
 </html>
