@@ -372,7 +372,7 @@
 </footer>
 
 <script>
-// Click the brand dots to morph them into a sushi roll (toggle).
+// Click the brand dots: they bloom into a sushi roll, then spring back.
 (function () {
   document.querySelectorAll('.brand-dots').forEach(function (dots) {
     if (!dots.querySelector('.brand-roll')) {
@@ -386,7 +386,11 @@
     dots.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();
-      dots.classList.toggle('morphed');
+      if (dots.classList.contains('morphed')) return; // already blooming; ignore extra clicks
+      dots.classList.add('morphed');
+      window.setTimeout(function () {
+        dots.classList.remove('morphed');
+      }, 1500);
     });
   });
 })();
